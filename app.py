@@ -43,7 +43,7 @@ def animo():
                         error.append("No se a definido la playlist para "+estado)
                         
                 else:
-                    error.append("No exxiste el estado '"+estado+"'")
+                    error.append("No existe el estado '"+estado+"'")
             else:
                 error.append("No existe '"+req+"'como parametro")
         
