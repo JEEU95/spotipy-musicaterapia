@@ -1,12 +1,14 @@
-from http import client
 import re
-from flask import Flask, request
-
-from spotipy.oauth2 import SpotifyClientCredentials
 import spotipy
 import sys
 import pprint
 import random
+import py_eureka_client.eureka_client as eureka_client
+
+from spotipy.oauth2 import SpotifyClientCredentials
+from flask import Flask, request
+from http import client
+from py_eureka_client import netint_utils
 
 client_id= '8ccb512ab6f5404bb835edf9502d238e'
 client_secret='297adc4aa85844f1a6d9fa65f631479b' 
@@ -115,4 +117,3 @@ def definir_lista(item):
 if __name__ == '__main__':
     # run app in debug mode on port 5000
     app.run(port='8080',debug=False, host='0.0.0.0')
-
