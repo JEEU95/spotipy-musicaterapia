@@ -26,7 +26,7 @@ estados = {'Alegre':'',
 app = Flask(__name__)
 
 # heroku credentials
-host="https://music-spotipy.herokuapp.com/"
+host="music-spotipy.herokuapp.com"
 rest_port = 8080
 ip = netint_utils.get_first_non_loopback_ip("192.168.10.0/24")
 eureka_client.init(eureka_server="http://52.73.98.2:8099/eureka",
