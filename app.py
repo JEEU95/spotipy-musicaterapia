@@ -25,6 +25,18 @@ estados = {'Alegre':'',
 # create the Flask app
 app = Flask(__name__)
 
+# heroku credentials
+host="https://music-spotipy.herokuapp.com/"
+rest_port = 8080
+ip = netint_utils.get_first_non_loopback_ip("192.168.10.0/24")
+eureka_client.init(eureka_server="http://52.73.98.2:8099/eureka",
+                   app_name="music-spotipy", 
+                   instance_port=rest_port, 
+                   instance_host=host,
+                   instance_ip=ip)
+
+
+
 # GET requests will be blocked
 @app.route('/animo', methods=['POST'])
 def animo():
@@ -102,5 +114,5 @@ def definir_lista(item):
 
 if __name__ == '__main__':
     # run app in debug mode on port 5000
-    app.run(debug=True, port=5000)
+    app.run(port='8080',debug=False, host='0.0.0.0')
 
